@@ -64,6 +64,7 @@
 
 
 # Recomanacions de particions
+[Link](https://wiki.archlinux.org/index.php/partitioning)
 ## Recomanació 1:
 - /boot		1G			ext4
 - swap		2 vegades RAM
@@ -85,7 +86,10 @@
 - /tmp		20K
 
 ## Consell meu
-- /boot		
+- /boot		1G			ext4
+- swap		Màx 2G			[SWAP]
+- /		50G			ext4
+- /home		resta			ext4
 
 
 # Desfragmentar

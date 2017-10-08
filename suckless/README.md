@@ -11,3 +11,7 @@ Només cal fer:
 ```
 git apply /fitxer on estigui el *.diff
 ```
+
+## Consell
+Un cop compilat, posar-ho:
+* /usr/local/bin

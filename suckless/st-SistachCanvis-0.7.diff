@@ -1,0 +1,35 @@
+diff --git a/config.def.h b/config.def.h
+index b41747f..b5284ef 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char font[] = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+diff --git a/st.c b/st.c
+index 2594c65..a0b20cd 100644
+--- a/st.c
++++ b/st.c
+@@ -1263,6 +1263,8 @@ xsetsel(char *str, Time t)
+ 	XSetSelectionOwner(xw.dpy, XA_PRIMARY, xw.win, t);
+ 	if (XGetSelectionOwner(xw.dpy, XA_PRIMARY) != xw.win)
+ 		selclear(0);
++
++	clipcopy(NULL);
+ }
+ 
+ void
+@@ -1273,7 +1275,7 @@ brelease(XEvent *e)
+ 		return;
+ 	}
+ 
+-	if (e->xbutton.button == Button2) {
++	if (e->xbutton.button == Button3) {
+ 		selpaste(NULL);
+ 	} else if (e->xbutton.button == Button1) {
+ 		if (sel.mode == SEL_READY) {
